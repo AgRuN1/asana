@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Asana - Мои задачи {% endblock %}
+
+{% block content %}
+	{% if count > 0 %}
+		<h2 class="text-center">Мои задачи:</h2>
+		<div class="list-group">
+			{% for task in tasks %}
+				<div class="list-group-item">{{ task.txt }}</div>
+			{% endfor %}
+		</div>
+	{% else %}
+		<h2 class="text-center text-primary">
+			Вы пока что свободны
+		</h2>
+	{% endif %}
+{% endblock %}
