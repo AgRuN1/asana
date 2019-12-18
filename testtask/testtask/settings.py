@@ -25,7 +25,7 @@ SECRET_KEY = 'ECoaIO>q-.hK1[6=iJ_F:vN!_mWNLPqm:Y/>6A*<3}_}[krUy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
