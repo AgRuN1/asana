@@ -1,14 +1,13 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "logged.html" %}
 
-{% block title %} Asana - Мои задачи {% endblock %}
+{% block title %}Мои задачи{% endblock %}
 
 {% block content %}
 	{% if count > 0 %}
 		<h2 class="text-center">Мои задачи:</h2>
 		<div class="list-group">
 			{% for task in tasks %}
-				<div class="list-group-item">{{ task.txt }}</div>
+				<div class="list-group-item"><strong>{{ task.project.title }}</strong>: {{ task.txt }}</div>
 			{% endfor %}
 		</div>
 	{% else %}

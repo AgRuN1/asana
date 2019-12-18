@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %} Asana - Управляй своими задачами {% endblock %}
+{% block title %}Управляй задачами и проектами{% endblock %}
 
 {% block links %}
 	<link rel="stylesheet" href='{% static "form.css" %}'>
@@ -9,7 +9,7 @@
 
 {% block content %}
 <main>
-	<form class="form-signin text-center" action="/auth" method="post">
+	<form class="form-signin text-center" action="/login" method="post">
 		{% csrf_token %}
 	  <h1 class="h3 mb-3 font-weight-normal">Авторизация:</h1>
 	  {% if error %}

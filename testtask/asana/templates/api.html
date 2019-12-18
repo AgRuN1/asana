@@ -1,0 +1,20 @@
+{% extends "logged.html" %}
+
+{% block title %}API{% endblock %}
+
+{% block content %}
+	<h3 class="text-center">Наше api</h3>
+	{% if token %}
+		<div class="alert alert-info">
+			<strong>Токен: </strong>{{ token.key }}
+		</div>
+		<div class="alert alert-primary">
+			<a href="/api/tasks/all?token={{ token.key }}">Список задач</a>
+		</div>
+	{% else %}
+		<form method="post">
+			{% csrf_token %}
+			<button class="btn btn-primary">Создать токен</button>
+		</form>
+	{% endif %}
+{% endblock %}

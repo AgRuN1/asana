@@ -1,16 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>{% block title %}{% endblock %}</title>
+	<title>Asana - {% block title %}{% endblock %}</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	{% block links %}{% endblock %}
 	{% block scripts %}{% endblock %}
 </head>
 <body>
-	{% include "navbar.html" %}
+	<nav class="navbar navbar-dark bg-dark">
+		<div class="container">
+		  <a class="navbar-brand" href="/">
+		  	<img src='{% static "logo.svg" %}' height="36px"alt="">
+		    Asana
+		  </a>
+		  {% block menu %}{% endblock %}
+		</div>
+	</nav>
 	<div class="container">
-		{% block content %}{% endblock %}
+		<main class="content">
+			{% block content %}{% endblock %}
+		</main>
+		<hr>
 	</div>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
